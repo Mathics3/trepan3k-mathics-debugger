@@ -22,7 +22,7 @@ License: GPL3
 
 """
 __docformat__ = "restructuredtext"
-import trepan3k_mathics3.mathics3 as mathics3  # noqa
-from trepan3k_mathics3.version import __version__  # noqa
+from trepan3k_mathics3 import  mathics3, mup, printelement
+from trepan3k_mathics3.version import __version__
 
-__all__ = ["__version__", "mathics3"]
+__all__ = ["__version__", "mathics3", "mup", "printelement"]
