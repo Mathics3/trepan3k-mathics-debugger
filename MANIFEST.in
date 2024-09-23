@@ -1,0 +1,5 @@
+include COPYING
+include Makefile
+include NEWS
+include trepan3k_mathics3/__version__.py
+include test/Makefile
