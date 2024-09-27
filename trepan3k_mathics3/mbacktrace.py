@@ -15,7 +15,31 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Our local modules
-from pymathics.debugger.processor.command.up import UpCommand
+from pymathics.debugger.processor.command.backtrace import BacktraceCommand
+
+BacktraceCommand.aliases = ("mbt",)
+BacktraceCommand.__doc__ = """**mbacktrace** [*options*] [*count*]
+
+    Print backtrace of all stack frames, or innermost *count* frames.
+
+    An arrow indicates the 'current frame'. The current frame determines
+    the context used for many debugger commands such as expression
+    evaluation or source-line listing.
+
+    *options* are:
+
+       -h | --help    - give this help
+       -b | --builtin - show Mathics3 builtin methods
+       -e | --expr    - show Mathics3 Expressions
+
+    Examples:
+    ---------
+
+       mbacktrace      # Print a full stack trace
+       mbacktrace 2    # Print only the top two entries
+
+    """
+
 
 # def setup(debugger, instance):
 #     """
@@ -31,9 +55,9 @@ if __name__ == "__main__":
     from trepan.processor.command import mock as Mmock
 
     dbgr, cmd = Mmock.dbg_setup()
-    command = UpCommand(cmd)
+    command = BacktraceCommand(cmd)
     for cmdline in [
-        "up",
+        "mbacktrace",
     ]:
         args = cmdline.split()
         cmd_argstr = cmdline[len(args[0]) :].lstrip()

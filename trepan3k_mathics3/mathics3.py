@@ -29,6 +29,14 @@ Mathics3Command.__doc__ = """**mathics3**
         mathics3
 """
 
+def setup(debugger, instance):
+    """
+    Setup we need to do in order to make the Mathics3 Debugger code in ``instance`` work in the
+    trepan3k debugger object ``debugger``
+    """
+    # Make sure
+    instance.debugger.intf = debugger.intf
+
 # Demo it
 if __name__ == "__main__":
     from trepan.processor.command import mock as Mmock
