@@ -15,7 +15,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Our local modules
-from pymathics.debugger.processor.command.mathics3 import Mathics3Command
+from pymathics.trepan.processor.command.mathics3 import Mathics3Command
 
 Mathics3Command.__doc__ = """**mathics3**
 

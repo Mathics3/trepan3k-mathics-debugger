@@ -15,7 +15,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Our local modules
-from pymathics.debugger.processor.command.up import UpCommand
+from pymathics.trepan.processor.command.up import UpCommand
 
 # def setup(debugger, instance):
 #     """

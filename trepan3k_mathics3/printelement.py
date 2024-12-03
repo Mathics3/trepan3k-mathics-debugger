@@ -15,7 +15,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Our local modules
-from pymathics.debugger.processor.command.printelement import PrintElementCommand
+from pymathics.trepan.processor.command.printelement import PrintElementCommand
 
 # Demo it
 if __name__ == "__main__":
