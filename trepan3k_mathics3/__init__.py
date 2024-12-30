@@ -22,7 +22,7 @@ License: GPL3
 
 """
 __docformat__ = "restructuredtext"
-from trepan3k_mathics3 import mathics3, mbacktrace, mup, printelement
+from trepan3k_mathics3 import mathics3, mbacktrace, mdown, mup, printelement
 from trepan3k_mathics3.version import __version__
 
-__all__ = ["__version__", "mathics3", "mbacktrace", "mup", "printelement"]
+__all__ = ["__version__", "mathics3", "mbacktrace", "mdown", "mup", "printelement"]
