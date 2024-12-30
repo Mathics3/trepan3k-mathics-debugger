@@ -25,4 +25,7 @@ __docformat__ = "restructuredtext"
 from trepan3k_mathics3 import mathics3, mbacktrace, mdown, mup, printelement
 from trepan3k_mathics3.version import __version__
 
+mdown.DownCommand.__doc__ = mdown.DownCommand.__doc__.replace("down", "mdown")
+mup.UpCommand.__doc__ = mup.UpCommand.__doc__.replace("up", "mup")
+
 __all__ = ["__version__", "mathics3", "mbacktrace", "mdown", "mup", "printelement"]
