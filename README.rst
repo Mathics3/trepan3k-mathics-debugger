@@ -12,6 +12,7 @@ Install
 -------
 
 ::
+
    $ pip install -e .
 
 
