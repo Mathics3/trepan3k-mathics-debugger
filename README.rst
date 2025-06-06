@@ -1,9 +1,22 @@
 Trepan3k plugin to support Mathics3 debugging from trepan3k
 ===========================================================
 
-Here we have a module extension to
+Abstract
+--------
 
-After building:
+Here, we have a module extension for the trepan3k debugger that adds
+commands that largely filter out and interpret Python information into
+a more Mathics3-centric information.
+
+Install
+-------
+
+::
+   $ pip install -e .
+
+
+Example
+-------
 
 ::
 

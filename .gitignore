@@ -1,3 +1,6 @@
+*~
 /.python-version
 /ChangeLog
+/build
+/dist
 /trepan3k_mathics3.egg-info
