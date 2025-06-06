@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#  Copyright (C) 2024 Rocky Bernstein <rocky@gnu.org>
+#  Copyright (C) 2024-2025 Rocky Bernstein <rocky@gnu.org>
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation, either version 3 of the License, or
@@ -22,10 +22,11 @@ License: GPL3
 
 """
 __docformat__ = "restructuredtext"
-from trepan3k_mathics3 import mathics3, mbacktrace, mdown, mup, printelement
+from trepan3k_mathics3 import mathics3, mbacktrace, mdown, mframe, mup, printelement
 from trepan3k_mathics3.version import __version__
 
 mdown.DownCommand.__doc__ = mdown.DownCommand.__doc__.replace("down", "mdown")
+mframe.FrameCommand.__doc__ = mframe.FrameCommand.__doc__.replace("frame", "mframe")
 mup.UpCommand.__doc__ = mup.UpCommand.__doc__.replace("up", "mup")
 
-__all__ = ["__version__", "mathics3", "mbacktrace", "mdown", "mup", "printelement"]
+__all__ = ["__version__", "mathics3", "mbacktrace", "mdown", "mframe", "mup", "printelement"]

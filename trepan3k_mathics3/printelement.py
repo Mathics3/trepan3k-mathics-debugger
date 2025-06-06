@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2024 Rocky Bernstein <rocky@gnu.org>
+# Copyright (C) 2024-2025 Rocky Bernstein <rocky@gnu.org>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     dbgr, cmd = Mmock.dbg_setup()
     command = PrintElementCommand(cmd)
     for cmdline in [
-        "up",
+        "printelement",
     ]:
         args = cmdline.split()
         cmd_argstr = cmdline[len(args[0]) :].lstrip()
