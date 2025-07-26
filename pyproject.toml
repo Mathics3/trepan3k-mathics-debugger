@@ -12,19 +12,23 @@ authors = [
 
 name = "trepan3k_mathics3"
 description = "trepan3k plugin to support Mathics3 debugging"
-dependencies = ["Mathics3"]
+dependencies = [
+    "Mathics3",
+    "trepan3k>=1.4.0"
+    ]
 readme = "README.rst"
-license = {text = "GPL"}
+license = "GPL-3.0-or-later"
 keywords = ["debugger"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Debuggers",
 ]
 dynamic = ["version"]
