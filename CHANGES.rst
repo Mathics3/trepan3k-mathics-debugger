@@ -1,9 +1,18 @@
 CHANGES
 =======
 
-01/20/2025
+1.0.1.dev0
+----------
+
+Revise for upcoming Mathics 9.0.0 release
+
+* Add ``mframe``: is like ``frame`` but mathics-oriented frame motion
+
 
 1.0.0
+-----
+
+01/20/2025
 
 First public release. Add trepan3k debugger command functions
 
