@@ -1,5 +1,5 @@
 #!/bin/bash
-PACKAGE=Mathics3-trepan
+PACKAGE=trepan3k_mathics3
 
 # FIXME put some of the below in a common routine
 function finish {
@@ -8,25 +8,20 @@ function finish {
   fi
 }
 
+trepan3k_mathics3_owd=$(pwd)
 cd $(dirname ${BASH_SOURCE[0]})
 trepan3k_mathics3_owd=$(pwd)
 trap finish EXIT
 
-if ! source ./pyenv-versions ; then
-    exit $?
-fi
-
-
 cd ..
-source pymathics/natlang/version.py
+source $PACKAGE/version.py
 echo $__version__
 
-pyversion=3.12
+pyversion=3.13
 if ! pyenv local $pyversion ; then
     exit $?
 fi
 
-python setup.py bdist_wheel --universal
-mv -v dist/${PACKAGE}-${__version__}-{py2.,}py3-none-any.whl
-python ./setup.py sdist
+pip wheel --wheel-dir=dist .
+python -m build --sdist
 finish

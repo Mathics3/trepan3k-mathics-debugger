@@ -13,7 +13,7 @@ authors = [
 name = "trepan3k_mathics3"
 description = "trepan3k plugin to support Mathics3 debugging"
 dependencies = [
-    "Mathics3",
+    # "Mathics3>8.0.1",
     "trepan3k>=1.4.0"
     ]
 readme = "README.rst"
