@@ -22,11 +22,11 @@ License: GPL3
 
 """
 __docformat__ = "restructuredtext"
-from trepan3k_mathics3 import mathics3, mbacktrace, mdown, mframe, mup, printelement
+from trepan3k_mathics3 import mathics3, mabort, mbacktrace, mdown, mframe, mprogram, mup, printelement
 from trepan3k_mathics3.version import __version__
 
 mdown.DownCommand.__doc__ = mdown.DownCommand.__doc__.replace("down", "mdown")
 mframe.FrameCommand.__doc__ = mframe.FrameCommand.__doc__.replace("frame", "mframe")
 mup.UpCommand.__doc__ = mup.UpCommand.__doc__.replace("up", "mup")
 
-__all__ = ["__version__", "mathics3", "mbacktrace", "mdown", "mframe", "mup", "printelement"]
+__all__ = ["__version__", "mabort", "mathics3", "mbacktrace", "mdown", "mframe", "mprogram", "mup", "printelement"]

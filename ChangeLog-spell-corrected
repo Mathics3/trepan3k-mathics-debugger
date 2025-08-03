@@ -1,0 +1,68 @@
+2025-07-27  rocky <rb@dustyfeet.com>
+
+	* admin-tools/git2cl, trepan3k_mathics3/version.py: Get ready for
+	release 1.0.0.dev0
+
+2025-07-27  rocky <rb@dustyfeet.com>
+
+	* Makefile, admin-tools/make-dist.sh, pyproject.toml: Administrivia
+	for release
+
+2025-07-26  rocky <rb@dustyfeet.com>
+
+	* pyproject.toml: Administrivia Use released trepan3k release 1.4.0 or greater.  The licensing
+	administrative dance Python imposes on developers
+
+2025-06-06  rocky <rb@dustyfeet.com>
+
+	* trepan3k_mathics3/__init__.py, trepan3k_mathics3/mframe.py,
+	trepan3k_mathics3/printelement.py: Add mframe
+
+2025-06-06  R. Bernstein <rocky@users.noreply.github.com>
+
+	* README.rst: Update README.rst
+
+2025-06-06  rocky <rb@dustyfeet.com>
+
+	* .gitignore, README.rst: Administrivia
+
+2025-06-06  rocky <rb@dustyfeet.com>
+
+	* README.rst: Update ReadME.rst
+
+2025-01-20  rocky <rb@dustyfeet.com>
+
+	* .gitignore, CHANGES.rst, MANIFEST.in, Makefile,
+	admin-tools/make-dist.sh, admin-tools/pyenv-versions,
+	pyproject.toml, trepan3k_mathics3/version.py: Get ready for release
+	1.0.0
+
+2024-12-30  rocky <rb@dustyfeet.com>
+
+	* trepan3k_mathics3/__init__.py: Adjust docstring for mup and mdown
+
+2024-12-30  rocky <rb@dustyfeet.com>
+
+	* trepan3k_mathics3/__init__.py, trepan3k_mathics3/mdown.py: Add
+	mdown command
+
+2024-12-03  rocky <rb@dustyfeet.com>
+
+	* trepan3k_mathics3/mathics3.py, trepan3k_mathics3/mbacktrace.py,
+	trepan3k_mathics3/mup.py, trepan3k_mathics3/printelement.py: Track
+	debugger name change
+
+2024-09-26  rocky <rb@dustyfeet.com>
+
+	* trepan3k_mathics3/__init__.py, trepan3k_mathics3/mathics3.py,
+	trepan3k_mathics3/mbacktrace.py, trepan3k_mathics3/mup.py: Add mbt
+
+2024-09-23  rocky <rb@dustyfeet.com>
+
+	* trepan3k_mathics3/__init__.py, trepan3k_mathics3/mup.py,
+	trepan3k_mathics3/printelement.py: Add mup and printelement...  But only printelement works properly
+
+2024-09-22  rocky <rb@dustyfeet.com>
+
+	* Start Mathics3 debugger from trepan3k side
+
