@@ -1,12 +1,14 @@
 CHANGES
 =======
 
-1.0.1.dev0
-----------
+1.1.0
+-----
 
-Revise for upcoming Mathics 9.0.0 release
+Revise for Mathics 9.0.0 release
 
-* Add ``mframe``: is like ``frame`` but mathics-oriented frame motion
+* Add ``mframe``: is like ``frame`` but for Mathics3-related frame motion
+* Add ``mprogram``: is like ``program`` but for Mathics3-related frame
+* Add ``abort``: Aborts current Mathics3 command
 
 
 1.0.0

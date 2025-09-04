@@ -10,7 +10,6 @@ function finish {
 
 trepan3k_mathics3_owd=$(pwd)
 cd $(dirname ${BASH_SOURCE[0]})
-trepan3k_mathics3_owd=$(pwd)
 trap finish EXIT
 
 cd ..
@@ -22,6 +21,7 @@ if ! pyenv local $pyversion ; then
     exit $?
 fi
 
+rm -fr build
 pip wheel --wheel-dir=dist .
 python -m build --sdist
 finish

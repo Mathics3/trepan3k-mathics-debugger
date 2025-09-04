@@ -13,8 +13,9 @@ authors = [
 name = "trepan3k_mathics3"
 description = "trepan3k plugin to support Mathics3 debugging"
 dependencies = [
-    "Mathics3>8.0.1",
-    "trepan3k>=1.4.0"
+    "Mathics3>=9.0.0",
+    "Mathics3-Module-trepan>=9.0.0",
+    "trepan3k>=1.4.1"
     ]
 readme = "README.rst"
 license = "GPL-3.0-or-later"
@@ -24,7 +25,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries :: Python Modules",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",

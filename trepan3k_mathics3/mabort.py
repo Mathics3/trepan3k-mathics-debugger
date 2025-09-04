@@ -20,6 +20,33 @@ import trepan.processor.cmdproc as trepan_cmdproc
 from mathics.core.interrupt import AbortInterrupt
 from trepan.processor.command.base_cmd import DebuggerCommand
 
+
+def ctype_async_raise(thread_obj, exception):
+    found = False
+    target_tid = 0
+    for tid, tobj in threading._active.items():
+        if tobj is thread_obj:
+            found = True
+            target_tid = tid
+            break
+
+    if not found:
+        raise ValueError("Invalid thread object")
+
+    ret = ctypes.pythonapi.PyThreadState_SetAsyncExc(
+        target_tid, ctypes.py_object(exception)
+    )
+    # ref: http://docs.python.org/c-api/init.html#PyThreadState_SetAsyncExc
+    if ret == 0:
+        raise AbortInterrupt
+    elif ret > 1:
+        # Huh? Why would we notify more than one threads?
+        # Because we punch a hole into C level interpreter.
+        # So it is better to clean up the mess.
+        ctypes.pythonapi.PyThreadState_SetAsyncExc(target_tid, 0)
+        raise SystemError("PyThreadState_SetAsyncExc failed")
+
+
 class AbortCommand(DebuggerCommand):
     """**abort**
 
@@ -62,9 +89,9 @@ class AbortCommand(DebuggerCommand):
 
     def run(self, args):
         threading_list = threading.enumerate()
-        if (
-            len(threading_list) == 1 or self.debugger.from_ipython
-        ) and threading_list[0].name == "MainThread":
+        if (len(threading_list) == 1 or self.debugger.from_ipython) and threading_list[
+            0
+        ].name == "MainThread":
             # We are in a main thread and either there is one thread or
             # we or are in ipython, so that's safe to quit.
             return self.nothread_quit(args)
@@ -73,17 +100,18 @@ class AbortCommand(DebuggerCommand):
         return
 
 
-
 trepan_cmdproc.PASSTHROUGH_EXCEPTIONS.add(AbortInterrupt)
+
+
 def setup(debugger, instance):
     """
     Setup we need to do in order to make the Mathics3 Debugger code in ``instance`` work in the
     trepan3k debugger object ``debugger``
     """
     # Make sure we hook into debugger interface
-    print("mabort setup")
     instance.debugger.intf = debugger.intf
-    trepan_cmdproc.PASSTHROUGH_EXCEPTIONS.add(AbortInterrupt)
+    # trepan_cmdproc.PASSTHROUGH_EXCEPTIONS.add(AbortInterrupt)
+
 
 # Demo it
 if __name__ == "__main__":
