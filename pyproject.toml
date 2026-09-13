@@ -15,7 +15,7 @@ description = "trepan3k plugin to support Mathics3 debugging"
 dependencies = [
     "Mathics3>10.0.1",
     "Mathics3-Module-trepan>=9.0.1",
-    "trepan3k>=1.5.0"
+    "trepan3k>=1.5.1"
     ]
 readme = "README.rst"
 license = "GPL-3.0-or-later"
@@ -35,6 +35,7 @@ dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://github.com/Mathics3/trepan3k-mathics3-plugin"
+Changelog = "https://github.com/Mathics3/trepan3k-mathics3-plugin/blob/master/Changes.rst"
 Downloads = "https://github.com/Mathics3/trepan3k-mathics3-plugin/releases"
 
 [project.optional-dependencies]

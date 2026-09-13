@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#   Copyright (C) 2025 Rocky Bernstein <rocky@gnu.org>
+#   Copyright (C) 2025-2026 Rocky Bernstein <rocky@gnu.org>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -15,10 +15,10 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from mathics.eval.stackframe import get_eval_Expression
-from trepan.processor.command.base_cmd import DebuggerCommand
 from pymathics.trepan.lib.format import format_element, pygments_format
 from pymathics.trepan.lib.location import format_location
 from pymathics.trepan.lib.stack import print_stack_trace
+from trepan.processor.command.base_cmd import DebuggerCommand
 
 
 class MProgramCommand(DebuggerCommand):
@@ -47,7 +47,7 @@ class MProgramCommand(DebuggerCommand):
             msg = f"Mathics3 stop via a '{event}' event."
             self.msg(msg)
 
-        style=self.settings["style"]
+        style = self.settings["style"]
 
         event_arg = proc.event_arg
         if isinstance(event_arg, tuple) and len(event_arg) > 0:
@@ -58,7 +58,9 @@ class MProgramCommand(DebuggerCommand):
             return
 
         if (eval_expression := get_eval_Expression()) is not None:
-            eval_expression_str = format_element(eval_expression, allow_python=False, use_operator_form=True)
+            eval_expression_str = format_element(
+                eval_expression, allow_python=False, use_operator_form=True
+            )
             formatted_expression = pygments_format(eval_expression_str, style=style)
             self.msg(f"Expression: {formatted_expression}")
 
@@ -84,7 +86,6 @@ class MProgramCommand(DebuggerCommand):
             self.msg(f"SymPy function: {formatted_function}")
             # self.msg(f"mpmath method: {callback_arg[1]}")
 
-
         print_stack_trace(
             self.proc,
             1,
@@ -99,6 +100,7 @@ class MProgramCommand(DebuggerCommand):
         )
         return
 
+
 def setup(debugger, instance):
     """
     Setup we need to do in order to make the Mathics3 Debugger code in ``instance`` work in the
@@ -107,10 +109,11 @@ def setup(debugger, instance):
     # Make sure we hook into debugger interface
     instance.debugger.intf = debugger.intf
 
+
 if __name__ == "__main__":
     from pymathics.trepan.lib.repl import DebugREPL
 
     d = DebugREPL()
     cp = d.core.processor
-    command = MProgram(cp)
+    command = MProgramCommand(cp)
     command.run(["program"])

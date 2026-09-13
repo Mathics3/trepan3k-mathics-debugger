@@ -1,6 +1,15 @@
 *~
+.idea/
+.mypy_cache
+.project
+.pydevproject
+.settings
+.vscode
+__pycache__/
 /.python-version
 /ChangeLog
 /build
 /dist
+/dist
 /trepan3k_mathics3.egg-info
+.coverage
